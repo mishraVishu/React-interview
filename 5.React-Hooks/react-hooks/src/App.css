@@ -1,0 +1,35 @@
+[data-theme="light"]{
+    --bg-color: #fff;
+    --text-color: #000;
+    --heading-color: #000;
+}
+
+[data-theme="dark"]{
+    --bg-color: #000;
+    --text-color: #fff;
+    --heading-color: #fff;
+}
+
+body{
+    background-color: var(--bg-color);
+}
+
+h3,h5,h4,div{
+    color:var(--heading-color);
+}
+
+ul,li,p{
+    color:var(--text-color)
+}
+
+.navbar{
+    display: flex;
+    gap:1rem;
+}
+
+.link{
+    color:var(--text-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}

@@ -23,11 +23,11 @@ const UseEffect = () => {
         const interval = setInterval(() => {
             setSeconds(seconds + 1);
         }, 1000);
-        console.log('Effect triggered')
+        //console.log('Effect triggered')
 
         return () => {
             clearInterval(interval);
-            console.log('Interval cleared');
+            //console.log('Interval cleared');
         }
     }, );
 
