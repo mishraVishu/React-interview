@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useState } from 'react'
-import UseEffectPolyfill from './UseEffectPolyfill';
+import UseEffectPolyfill from './polyfills/UseEffectPolyfill';
 
 const UseEffect = () => {
     const [users, setUsers] = useState([]);
