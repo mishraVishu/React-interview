@@ -15,11 +15,11 @@ body{
 }
 
 h3,h5,h4,div{
-    color:var(--heading-color);
+    color: var(--heading-color);
 }
 
 ul,li,p{
-    color:var(--text-color)
+    color: var(--text-color)
 }
 
 .navbar{
@@ -28,7 +28,7 @@ ul,li,p{
 }
 
 .link{
-    color:var(--text-color);
+    color: var(--text-color);
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: bold;

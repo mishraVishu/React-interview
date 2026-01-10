@@ -12,7 +12,7 @@ const UseMemoAndUseCallbackHook = () => {
     const squaredValueUsingCallback = useCallback(() => {
         console.log('Expoensive operation', counter2);
         return counter*counter;
-    },[counter]) // re-initialiuzes function only when counter values changes 
+    },[counter]);
 
   return (
     <div>
