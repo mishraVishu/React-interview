@@ -20,7 +20,7 @@ const UseMemoAndUseCallbackHook = () => {
         <h4>Question 1. What is useMemo in React?</h4>
         {
             <>
-                <p>- It is used to memoize the result of a function and cache it, recalculating only when dependancy chnges.</p>
+                <p>- It is used to memoize the result of a function and cache it, recalculating only when dependancy changes.</p>
                 <p>Squared Count: {squaredCounterUseMemo}</p>
                 <p>Squaed Count: {squaredValueUsingCallback()}</p>
                 <button onClick={() => setCounter(counter+1)}>Increment</button>

@@ -37,4 +37,4 @@ const ChildComponent = forwardRef((props,ref)  => {
     )
 })
 
-export default UseImperativeHandle
+export default UseImperativeHandle;

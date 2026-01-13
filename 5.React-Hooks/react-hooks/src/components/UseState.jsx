@@ -13,7 +13,7 @@ const UseState = () => {
         // setCount(count+1); 0+1
         // setCount(count+1); 0+1
         // setCount(count+1); 0+1
-        // it will not work because setCOunt is async is nature and val of count is 0 here but we can achieve the motive of +3 by using callback inside setState
+        // it will not work because setCount is async is nature and val of count is 0 here but we can achieve the motive of +3 by using callback inside setState
 
         setCount((prevCount)=>prevCount+1);
         setCount((prevCount)=>prevCount+1);
@@ -28,7 +28,6 @@ const UseState = () => {
         const {name,value} = e.target;
         console.log(name,value);
         setUserData({...userData , [name]:value});
-
     }
 
     const submitHandler = (e) => {
@@ -55,7 +54,7 @@ const UseState = () => {
         {
             <>
                 <p>- It a  concept that allows synchronization of data bwetween model(state) and view(UI) in both directions.</p>
-                <p>- You can achieve it ny combining state management with controlled components.</p>
+                <p>- You can achieve it by combining state management with controlled components.</p>
                 <input type="text" value={value} onChange={(e)=> onValueChange(e)}/>
                 <span>Value: {value}</span>
             </>

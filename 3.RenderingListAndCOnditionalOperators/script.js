@@ -15,20 +15,22 @@ function App() {
         <div>
             <h2>Rendering Lists and Conditional Operators</h2>
             <h3>
-                1.Ques- How does map function work in Reactfor rendering Lists ? Provide example.
+                1.Ques- How does map function work in React for rendering Lists ? Provide example.
             </h3>
             {
-                /**
-                 * - Commonly used to iterate through array of React components dynamically.
-                 * - It allows you to create an array of new React components based on original aaray.
-                 */
-                <ul>
-                    {Products.map(product => (
-                        <li key={product.name}>
-                            <strong>{product.name}</strong> - {product.price} - {product.category}
-                        </li>
-                    ))}
-                </ul>
+                <>
+                    <p> - Commonly used to iterate through array of React components dynamically. </p>
+                    <p>  - It allows you to create an array of new React components based on original array.</p>
+                 
+                    <ul>
+                        {Products.map(product => (
+                            <li key={product.name}>
+                                <strong>{product.name}</strong> - {product.price} - {product.category}
+                            </li>
+                        ))}
+                    </ul>
+                </>
+                
             }
             <h3>2.Ques - How do you filter it on the basis of Electronics category.</h3>
             {

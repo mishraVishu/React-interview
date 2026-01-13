@@ -19,7 +19,7 @@ const UseEffect = () => {
         fetchUser();
     }, []);
 
-    useEffect(() => {
+    UseEffectPolyfill(() => {
         const interval = setInterval(() => {
             setSeconds(seconds + 1);
         }, 1000);
@@ -96,7 +96,7 @@ const UseEffect = () => {
                         <li>2. Good for performance - Does not block the browser from painting changes on the screen.</li>
                     </ul>
                     <ul>useLayoutEffect
-                        <li>1. Synchronous - Runs immedialtely after the DOM is upadted but before browser prints anything on the screen i.e. bdfore rendering anything.</li>
+                        <li>1. Synchronous - Runs immedialtely after the DOM is upadted but before browser prints anything on the screen i.e. before rendering anything.</li>
                         <li>2. Potentially blocking - Can potentially cause delays in the rendering process if the operations are heavy.</li>
                     </ul>
                 </>

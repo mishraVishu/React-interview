@@ -8,7 +8,7 @@ function App() {
                 // can contain state and access to various lifecycle methods which executes at various points ina component life cycle.
                 <Counter />
             }
-            <h3>Question 2 -Explain constructor and super keywords here</h3>
+            <h3>Question 2 - Explain constructor and super keywords here</h3>
             {
                 // Constructor -  
                 // 1.Initializing State: It's used to initialize the component's state by assigning an initial value to this.state;
@@ -23,10 +23,10 @@ function App() {
             {
 
             }
-            <h3>Question 4 - What are function based components and What rae hooks? Explain any two of them.</h3>
+            <h3>Question 4 - What are function based components and What are hooks? Explain any two of them.</h3>
             {
                 /**
-                 * Hooks are functions that allow functional components touse state, lifecycle methods previously available only in class based components.
+                 * Hooks are functions that allow functional components to use state, lifecycle methods previously available only in class based components.
                  */
                 <PhotoGallery />
             }
@@ -53,8 +53,8 @@ function App() {
             <h3>Question 7. What is a children prop?</h3>
             {
                 /**
-                 * - The children prop in React isa  specila prop which allows us to pass content(text, components, elements) b/w opening and closing tag.
-                 * - Allows you to build reusable compoenets that can display any nested content.
+                 * - The children prop in React is a  special prop which allows us to pass content(text, components, elements) b/w opening and closing tag.
+                 * - Allows you to build reusable components that can display any nested content.
                  */
                 <>
                     <Card>This is card one.</Card>
@@ -73,14 +73,14 @@ function App() {
             <h4>3. What are Higher order compnents(HOC) ?</h4>
             {
                 <>
-                    <p>Components which take another component as an argument and returns enhanced version of that. for this we use withas Logger.</p>
+                    <p>Components which take another component as an argument and returns enhanced version of that. for this we use with as Logger.</p>
                     <FeatureAuthCompoennet />
                 </>
             }
             <h4>4. What are pure components?</h4>
             {
                 <>
-                <p>Optimizes the rendering performance of compoenents by reducing the un-necessary re-render.</p>
+                <p>Optimizes the rendering performance of components by reducing the un-necessary re-render.</p>
                 <Counter />
                 </>
             }
@@ -117,7 +117,8 @@ class Counter extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            count: 0, count1: 0
+            count: 0, 
+            count1: 0
         };
         // Good place to initialize state and bind methods
     }
@@ -334,7 +335,6 @@ const ControlledComponent = () => {
         const val = e.target.value;
         setValue(val);
         console.log(value);
-        
     }
 
     return(

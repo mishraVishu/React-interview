@@ -5,14 +5,16 @@ const UserContext = createContext();
 
 const UseContext = () => {
     const [theme, setTheme] = useState('light');
+    const [isLoggedIn , setIsLoggedIn] = useState(true);
 
     const changeTheme = () => {
         setTheme(theme === 'light' ? 'dark' : 'light')
+        setIsLoggedIn(!isLoggedIn);
     }
 
     return (
         <ThemeContext.Provider value={{ theme, changeTheme }}>
-            <UserContext.Provider value={{ isLoggedIn: true }}>
+            <UserContext.Provider value={{ isLoggedIn }}>
                 <div>
                     <h3>UseContext</h3>
                     <h4>Question 1. What is useContext in React?</h4>
