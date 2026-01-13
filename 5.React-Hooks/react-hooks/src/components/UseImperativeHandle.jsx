@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef } from 'react'
+import { forwardRef, useRef } from 'react'
 import { useImperativeHandle } from 'react';
 
 const UseImperativeHandle = () => {
@@ -10,29 +10,29 @@ const UseImperativeHandle = () => {
         {
             <>
                 <ChildComponent ref={childRef}/>
-                <button onClick={() => {childRef.current.focusInput()}}>Focus on Input</button>
+                <button onClick={() => {childRef?.current?.onFocus()}}>Focus on Input</button>
             </>
         }
     </div>
   )
 }
 
-const ChildComponent = forwardRef((props,ref)  => {
+const ChildComponent = forwardRef((props,ref) => {
     const inputRef = useRef(null);
 
     const onFocusHandle = () => {
         inputRef.current.focus();
     }
 
-    useImperativeHandle(ref,() => {
+    useImperativeHandle(ref, () => {
         return {
-            focusInput:onFocusHandle,
+            onFocus: onFocusHandle
         }
     })
 
-    return(
+    return (
         <div>
-            <input type='text' ref={inputRef}/>
+            <input type="text" ref={inputRef}/>
         </div>
     )
 })
