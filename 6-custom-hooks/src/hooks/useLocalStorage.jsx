@@ -1,21 +1,29 @@
 import { useState } from "react";
 
 const useLocalStorage = (key, initialValue = 'Guest') => {
-    let initial;
-    try {
-        const storedValue = typeof window !== "undefined" ? localStorage.getItem(key) : null;
-        initial = storedValue ? JSON.parse(storedValue) : initialValue;
-    } catch {
-        initial = initialValue;
-    }
+    const isBrowser = typeof window !== "undefined";
+    let initial = initialValue;
 
     const [value, setValue] = useState(initial);
 
-    // Check for browser environment and key after hook
-    const isBrowser = typeof window !== "undefined";
     if (!isBrowser) {
         return [initialValue, () => {}, () => {}];
     }
+
+
+    try {
+        const storedValue = localStorage.getItem(key);
+        if (storedValue === "") {
+            localStorage.setItem(key, JSON.stringify(initialValue));
+            setValue(initialValue)
+        } else {
+            initial = JSON.parse(storedValue);
+        }
+    } catch {
+        // fallback to initialValue
+    }
+    
+
     if (!key) {
         throw new Error('Key must be provided to store value in LocalStorage.')
     }

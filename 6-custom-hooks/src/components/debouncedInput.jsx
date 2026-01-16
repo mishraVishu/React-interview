@@ -5,7 +5,6 @@ const DebouncedInput = () => {
     const [value, setValue] = useState(null);
     const debouncedValue = useDebounce(value,1000,() => {
         console.log('function called');
-        
     });
 
     const onChangeHandler = (e) => {
