@@ -1,52 +1,36 @@
-
-// import { useEffect } from 'react';
-// import { useState } from 'react'
 import { Link, useLoaderData, useNavigation } from 'react-router-dom';
 
 const PostLists = () => {
-
   const posts = useLoaderData();
-  console.log(posts);
+  const navigation = useNavigation();
+  const isLoading = navigation.state === 'loading';
 
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [data, setData] = useState(null);
-
-  // const fetchPosts = async() => {
-  //   try{
-  //     setIsLoading(true)
-  //   const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=50');
-  //   const data = await res.json();
-  //   setData(data);
-  //   }catch(e){
-  //     console.log(e);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   fetchPosts();
-  // },[])
+  if (isLoading) {
+    return <div className="spinner"></div>;
+  }
 
   return (
     <div>
-      {posts?.map(item => {
-        return (
-          <div style={{ border:'1px solid grey', padding:'1rem', marginBottom:'1rem'}} key={item.id}>
-            <h3>{item.title}</h3>
-            <p>{item.body}</p>
-            <Link to={`/posts/${item.id}`}>View Comments</Link>
-          </div>
-        )
-      })}
+      {posts?.map(item => (
+        <div style={{ border:'1px solid grey', padding:'1rem', marginBottom:'1rem'}} key={item.id}>
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+          <Link to={`/posts/${item.id}`}>View Comments</Link>
+        </div>
+      ))}
     </div>
-  )
+  );
 }
 
 export async function PostsLoader(){
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=50');
-  const data = await res.json();
-  return data;
+  try {
+    const res = await fetch('https://jsonplaceholder.typicode.co/posts?_limit=50');
+    if (!res.ok) throw new Error('Failed to fetch posts');
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    throw error; // This will be caught by errorElement
+  }
 }
 
-export default PostLists
+export default PostLists;

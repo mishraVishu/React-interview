@@ -6,13 +6,26 @@ body{
 
 .header{
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
 .active{
   background-color: black;
   color: white;
   padding:1rem;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+input,button[type='submit']{
+  padding: 0.5rem;
 }
