@@ -24,7 +24,7 @@ const PostLists = () => {
 
 export async function PostsLoader(){
   try {
-    const res = await fetch('https://jsonplaceholder.typicode.co/posts?_limit=50');
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=50');
     if (!res.ok) throw new Error('Failed to fetch posts');
     const data = await res.json();
     return data;
